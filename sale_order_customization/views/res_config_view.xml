@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <!--Adding the sale order limit into the configuration-->
+        <record id="res_config_settings_view_form_timesheet_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.sale.admin</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="20"/>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@name='catalog_setting_container']" position="before">
+                    <block title="Sale Order Limit" name="sale_order_limit_set">
+                        <div class="col-12 col-lg-6 o_setting_box" id="timesheet_parameters">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Sale Order Limit</span>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="sale_order_limit" class="col-lg-3 o_light_label"/>
+                                        <field name="sale_order_limit"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </block>
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
